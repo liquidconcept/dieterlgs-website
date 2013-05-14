@@ -24,7 +24,7 @@ $yellow: #f7f700;
 /**********************/
 
 #main {
-  width : 900px;
+  width : 950px;
   margin: 0 auto;
   font-family: Arial;
   text-align: center;
@@ -37,6 +37,7 @@ h3 {
 }
 
 h4 {
+  margin-bottom : 10px;
   color: white;
   font-weight: 800;
   font-size: 18px;
@@ -76,7 +77,7 @@ h4 {
 
 .cubeY2 {
   background-color: $yellow;
-  margin-left: 5px;
+  margin-left: 20px;
 }
 
 p {
@@ -92,7 +93,7 @@ p {
     font-size: 80px;
     color: white;
     font-weight: 800;
-    margin: 10px 0;
+    margin: 15px 0;
   }
 }
 
@@ -100,7 +101,11 @@ h6 {
   font-style: italic;
   color: white;
   font-size: 14px;
-  margin-top: 20px;
+  margin-top: 35px;
+}
+
+input {
+  margin-top: 5px;
 }
 
 /**********************/
@@ -139,7 +144,8 @@ footer {
 
   h2 {
     color: $grey;
-    margin-top: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     font-size: 25px;
   }
 }
@@ -178,7 +184,7 @@ footer {
     font-size: 30px;
     width: 362px;
     height: 53px;
-    margin-top: 20px;
+    margin-top: 30px;
     border-radius: 10px;
     background-image: linear-gradient(bottom, #4bc055 0%, #5ae666 100%);
     background-image: -o-linear-gradient(bottom, #4bc055 0%, #5ae666 100%);
@@ -209,7 +215,7 @@ footer {
 }
 
 .middleRow {
-  width: 320px;
+  width: 340px;
   float: left;
   text-align: left;
 
@@ -227,7 +233,7 @@ footer {
 }
 
 .bigRow {
-  width: 350px;
+  width: 370px;
   float: left;
   text-align: left;
 
