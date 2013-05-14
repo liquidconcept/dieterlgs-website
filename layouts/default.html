@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <title>DieterLGS <%= @item[:title] %></title>
+    <link rel="stylesheet" href="<%= stylesheet_path 'application' %>" media="screen">
+    <script src="<%= javascript_path 'application' %>"></script>
+  </head>
+  <body>
+    <div id ="main">
+      <header>
+        <h2>079 / 310 07 00</h2>
+        <h1 class="logo">Dieter LGS  Auto moto école 1326 JURIENS</h1>
+        <a href="mailto:didischmid@bluewin">didischmid@bluewin.ch</a>
+        <div class="both"></div>
+      </header>
+      <div id="content">
+        <%= yield %>
+      </div>
+      <footer>
+        <h2>Auto Moto Ecole - 1326 Juriens - 079 / 310 07 00 - didischmid@bluewin.ch</h1>
+      </footer>
+    </div>
+  </body>
+</html>

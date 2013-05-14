@@ -1,0 +1,245 @@
+/***********************/
+/******* IMPORT ********/
+/***********************/
+
+@import "compass/reset";
+@import "compass/typography/text/replacement";  /*FEATURES FOR THE LOGO*/
+
+/**********************/
+/******* COLOR ********/
+/**********************/
+
+$grey: #717172;
+$greyBG: #c9c6bf;
+$blue: #0000f7;
+$red: #f70000;
+$yellow: #f7f700;
+
+/**********************/
+/******* OTHER ********/
+/**********************/
+
+/**********************/
+/******* GLOBAL *******/
+/**********************/
+
+#main {
+  width : 900px;
+  margin: 0 auto;
+  font-family: Arial;
+  text-align: center;
+}
+
+h3 {
+  font-size: 30px;
+  padding: 20px 0;
+  text-align: left;
+}
+
+h4 {
+  color: white;
+  font-weight: 800;
+  font-size: 18px;
+}
+
+.triangle {
+  width: 54px;
+  height: 30px;
+  margin-left: 420px;
+}
+
+.both {
+  clear: both;
+}
+
+.cubeB, .cubeY, .cubeR, .cubeY2 {
+  width: 45px;
+  height: 25px;
+  float: left;
+  margin-right: 10px;
+}
+
+.cubeB {
+  background-color: $blue;
+  margin-left: 150px;
+}
+
+.cubeR {
+  background-color: $red;
+  margin-left: 120px;
+}
+
+.cubeY {
+  background-color: $yellow;
+  margin-left: 280px;
+}
+
+.cubeY2 {
+  background-color: $yellow;
+  margin-left: 5px;
+}
+
+p {
+  line-height: 130%;
+  font-size: 18px;
+}
+
+.number {
+  width: 100px;
+  float: left;
+
+  h5 {
+    font-size: 80px;
+    color: white;
+    font-weight: 800;
+    margin: 10px 0;
+  }
+}
+
+h6 {
+  font-style: italic;
+  color: white;
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+/**********************/
+/******* GENERAL ******/
+/**********************/
+
+header {
+  margin-top: 20px;
+
+  h2 {
+    color: $grey;
+    float: left;
+    margin: 100px 30px 0 40px;
+    font-size: 30px;
+  }
+
+  a {
+    font-size: 30px;
+    text-decoration: none;
+    margin: 100px 0 0 20px;
+    color: $grey;
+    float: left;
+  }
+
+  h1.logo {
+    float: left;
+    @include replace-text-with-dimensions('logo_dieter.jpg', 50%, 50%, true);
+  }
+
+  div.both {
+    clear: both;
+  }
+}
+
+footer {
+
+  h2 {
+    color: $grey;
+    margin-top: 40px;
+    font-size: 25px;
+  }
+}
+
+#conduiteVoiture {
+  background-color: $greyBG;
+  margin: 20px 0;
+  padding-bottom: 20px;
+}
+
+#coursObligatoires, #preparation {
+  background-color: $greyBG;
+}
+
+#coursObligatoires {
+  margin-top: 20px;
+  padding-bottom: 20px;
+}
+
+#preparation {
+  padding-bottom: 20px;
+}
+
+.coordonnees, #pack_maitrise, .confirmation {
+  border: white 2px dashed;
+  margin: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.confirmation {
+
+  input {
+    background-color: #4bc055;
+    color: white;
+    font-size: 30px;
+    width: 362px;
+    height: 53px;
+    margin-top: 20px;
+    border-radius: 10px;
+    background-image: linear-gradient(bottom, #4bc055 0%, #5ae666 100%);
+    background-image: -o-linear-gradient(bottom, #4bc055 0%, #5ae666 100%);
+    background-image: -moz-linear-gradient(bottom, #4bc055 0%, #5ae666 100%);
+    background-image: -webkit-linear-gradient(bottom, #4bc055 0%, #5ae666 100%);
+    background-image: -ms-linear-gradient(bottom, #4bc055 0%, #5ae666 100%);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+  }
+}
+.row {
+  width: 170px;
+  float: left;
+  text-align: left;
+
+  input {
+    display: block;
+  }
+
+  .checkbox {
+    display: block;
+
+    input {
+      display: inline;
+    }
+  }
+}
+
+.middleRow {
+  width: 320px;
+  float: left;
+  text-align: left;
+
+  input {
+    display: block;
+  }
+
+  .checkbox {
+    display: block;
+
+    input {
+      display: inline;
+    }
+  }
+}
+
+.bigRow {
+  width: 350px;
+  float: left;
+  text-align: left;
+
+  input {
+    display: block;
+  }
+
+  .checkbox {
+    display: block;
+
+    input {
+      display: inline;
+    }
+  }
+}

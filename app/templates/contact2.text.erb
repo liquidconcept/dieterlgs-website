@@ -1,0 +1,20 @@
+Coordonnées :
+=============
+Nom et Prénom : <%= params[:message_request][:name] %> <%= params[:message_request][:firstName] %>
+Adresse : <%= params[:message_request][:address] %>
+NPA : <%= params[:message_request][:npa] %>
+Email : <%= params[:message_request][:mail] %>
+Numéro de téléphone : <%= params[:message_request][:phone] %>
+Ville : <%= params[:message_request][:city] %>
+
+Pack2 :
+======
+1h - maîtrise technique : <%= params[:message_request][:pack1] %>
+1h - maîtrise de la circulation : <%= params[:message_request][:pack2] %>
+2h - maîtrise technique et de la circulation : <%= params[:message_request][:pack3] %>
+
+Date :
+======
+date 1 : <%= params[:message_request][:date1] %>
+date 2 : <%= params[:message_request][:date2] %>
+date 3 : <%= params[:message_request][:date3] %>
