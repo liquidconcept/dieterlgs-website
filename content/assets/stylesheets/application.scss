@@ -24,7 +24,7 @@ $yellow: #f7f700;
 /**********************/
 
 #main {
-  width : 950px;
+  width : 980px;
   margin: 0 auto;
   font-family: Arial;
   text-align: center;
@@ -78,6 +78,10 @@ h4 {
 .cubeY2 {
   background-color: $yellow;
   margin-left: 20px;
+}
+
+.empty_line {
+  margin: 10px 0;
 }
 
 p {
@@ -171,7 +175,7 @@ footer {
 
 .coordonnees, #pack_maitrise, .confirmation {
   border: white 2px dashed;
-  margin: 20px;
+  margin: 40px;
   padding-top: 20px;
   padding-bottom: 20px;
 }
@@ -204,15 +208,15 @@ footer {
   input {
     display: block;
   }
-
-  .checkbox {
-    display: block;
-
-    input {
-      display: inline;
-    }
-  }
 }
+
+.checkbox {
+  display: block;
+
+  input {
+    display: inline;
+    margin-right: 10px;
+  }
 
 .middleRow {
   width: 340px;
