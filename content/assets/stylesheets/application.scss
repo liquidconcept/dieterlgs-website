@@ -46,7 +46,7 @@ h4 {
 .triangle {
   width: 54px;
   height: 30px;
-  margin-left: 420px;
+  margin-left: 440px;
 }
 
 .both {
@@ -62,17 +62,17 @@ h4 {
 
 .cubeB {
   background-color: $blue;
-  margin-left: 150px;
+  margin-left: 195px;
 }
 
 .cubeR {
   background-color: $red;
-  margin-left: 120px;
+  margin-left: 152px;
 }
 
 .cubeY {
   background-color: $yellow;
-  margin-left: 280px;
+  margin-left: 310px;
 }
 
 .cubeY2 {
@@ -122,7 +122,7 @@ header {
   h2 {
     color: $grey;
     float: left;
-    margin: 100px 30px 0 40px;
+    margin: 92px 62px 0 64px;
     font-size: 30px;
   }
 
@@ -217,6 +217,7 @@ footer {
     display: inline;
     margin-right: 10px;
   }
+}
 
 .middleRow {
   width: 340px;
