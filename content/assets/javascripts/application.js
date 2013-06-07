@@ -12,7 +12,7 @@ $(function() {
     if ($('#six_hours_pack').is(':checked')) {
       $('.bigRow > #six_hours_date').show();
       $('.bigRow > #eight_hours_date').hide();
-      $('.bigRow > #twleve_hours_date').hide();
+      $('.bigRow > #twelve_hours_date').hide();
     } else if ($('#eight_hours_pack').is(':checked')) {
       $('.bigRow > #eight_hours_date').show();
       $('.bigRow > #six_hours_date').hide();
