@@ -64,27 +64,27 @@
       <div class="number">
         <h5>2</h5>
       </div>
-      <div class="row">
+      <div class="row" id="pack_checkbox">
         <h4>Choisir son pack</h4>
-        <div class="checkbox"><input name="message_request[pack]" size="10" type="radio" value="6h - CHF 300.-"><span> 6h - CHF 300.-</span></input></div>
-        <div class="checkbox"><input name="message_request[pack]" size="10" type="radio" value="8h - CHF 400.-"><span> 8h - CHF 400.-</span></input></div>
-        <div class="checkbox"><input name="message_request[pack]" size="10" type="radio" value="12h - CHF 600.-"><span> 12h - CHF 600.-</span></input></div>
+        <div class="checkbox"><input name="message_request[pack]" size="10" type="radio" value="6h - CHF 300.-" id="six_hours_pack"><span> 6h - CHF 300.-</span></input></div>
+        <div class="checkbox"><input name="message_request[pack]" size="10" type="radio" value="8h - CHF 400.-" id="eight_hours_pack"><span> 8h - CHF 400.-</span></input></div>
+        <div class="checkbox"><input name="message_request[pack]" size="10" type="radio" value="12h - CHF 600.-" id="twelve_hours_pack"><span> 12h - CHF 600.-</span></input></div>
       </div>
       <div class="row"><br/></div>
       <div class="bigRow">
         <h4>Choisir les dates de cours</h4>
-        <select name="message_request[date1]">
-          <option value="25 mars 2012, 30 mars 2012, 5 avril 2012, 7 avril 2012">25 mars 2012, 30 mars 2012, 5 avril 2012, 7 avril 2012</option>
-          <option value="25 mars 2012, 30 mars 2012, 5 avril 2012, 7 avril 2012">25 mars 2012, 30 mars 2012, 5 avril 2012, 7 avril 2012</option>
-          <option value="25 mars 2012, 30 mars 2012, 5 avril 2012, 7 avril 2012">25 mars 2012, 30 mars 2012, 5 avril 2012, 7 avril 2012</option>
-        </select>
-        <select name="message_request[date2]">
-          <option value="25 mars 2012, 30 mars 2012, 5 avril 2012, 7 avril 2012">25 mars 2012, 30 mars 2012, 5 avril 2012, 7 avril 2012</option>
+        <select name="message_request[date1]" id="six_hours_date">
+          <option value="25 mars 2012, 30 mars 2012, 5 avril 2012, 7 avril 2012">six, 30 mars 2012, 5 avril 2012, 7 avril 2012</option>
           <option value="25 mars 2012, 30 mars 2012, 5 avril 2012, 7 avril 2012">25 mars 2012, 30 mars 2012, 5 avril 2012, 7 avril 2012</option>
           <option value="25 mars 2012, 30 mars 2012, 5 avril 2012, 7 avril 2012">25 mars 2012, 30 mars 2012, 5 avril 2012, 7 avril 2012</option>
         </select>
-        <select name="message_request[date3]">
+        <select name="message_request[date2]" id="eight_hours_date">
+          <option value="25 mars 2012, 30 mars 2012, 5 avril 2012, 7 avril 2012">eight, 30 mars 2012, 5 avril 2012, 7 avril 2012</option>
           <option value="25 mars 2012, 30 mars 2012, 5 avril 2012, 7 avril 2012">25 mars 2012, 30 mars 2012, 5 avril 2012, 7 avril 2012</option>
+          <option value="25 mars 2012, 30 mars 2012, 5 avril 2012, 7 avril 2012">25 mars 2012, 30 mars 2012, 5 avril 2012, 7 avril 2012</option>
+        </select>
+        <select name="message_request[date3]" id="twelve_hours_date">
+          <option value="25 mars 2012, 30 mars 2012, 5 avril 2012, 7 avril 2012">twelve, 30 mars 2012, 5 avril 2012, 7 avril 2012</option>
           <option value="25 mars 2012, 30 mars 2012, 5 avril 2012, 7 avril 2012">25 mars 2012, 30 mars 2012, 5 avril 2012, 7 avril 2012</option>
           <option value="25 mars 2012, 30 mars 2012, 5 avril 2012, 7 avril 2012">25 mars 2012, 30 mars 2012, 5 avril 2012, 7 avril 2012</option>
         </select>
@@ -151,26 +151,26 @@
         <h5>2</h5>
       </div>
       <br />
-      <div class="middleRow">
+      <div class="middleRow" id="pack_checkbox_2">
         <h4>Choisir son pack</h4>
-        <div class="checkbox"><span>1h </span><input name="message_request[pack]" size="10" type="radio" value="1h maîtrise technique"><span> maîtrise technique</span></input></div>
-        <div class="checkbox"><span>1h </span><input name="message_request[pack]" size="10" type="radio" value="1h maîtrise de la circulation"><span> maîtrise de la circulation</span></input></div>
-        <div class="checkbox"><span>2h </span><input name="message_request[pack]" size="10" type="radio" value="2h maîtrise technique et de la circulation"><span> maîtrise technique et de la circulation</span></input></div>
+        <div class="checkbox"><span>1h </span><input name="message_request[pack]" size="10" type="radio" value="1h maîtrise technique" id="tech"><span> maîtrise technique</span></input></div>
+        <div class="checkbox"><span>1h </span><input name="message_request[pack]" size="10" type="radio" value="1h maîtrise de la circulation" id="flow"><span> maîtrise de la circulation</span></input></div>
+        <div class="checkbox"><span>2h </span><input name="message_request[pack]" size="10" type="radio" value="2h maîtrise technique et de la circulation" id="both"><span> maîtrise technique et de la circulation</span></input></div>
       </div>
       <div class="bigRow">
         <h4>Choisir les dates de cours</h4>
-        <select name="message_request[date1]">
-          <option value="25 mars 2012, 30 mars 2012, 5 avril 2012, 7 avril 2012">25 mars 2012, 30 mars 2012, 5 avril 2012, 7 avril 2012</option>
-          <option value="25 mars 2012, 30 mars 2012, 5 avril 2012, 7 avril 2012">25 mars 2012, 30 mars 2012, 5 avril 2012, 7 avril 2012</option>
-          <option value="25 mars 2012, 30 mars 2012, 5 avril 2012, 7 avril 2012">25 mars 2012, 30 mars 2012, 5 avril 2012, 7 avril 2012</option>
-        </select>
-        <select name="message_request[date2]">
-          <option value="25 mars 2012, 30 mars 2012, 5 avril 2012, 7 avril 2012">25 mars 2012, 30 mars 2012, 5 avril 2012, 7 avril 2012</option>
+        <select name="message_request[date1]" id="tech_date">
+          <option value="25 mars 2012, 30 mars 2012, 5 avril 2012, 7 avril 2012">1, 2012, 30 mars 2012, 5 avril 2012, 7 avril 2012</option>
           <option value="25 mars 2012, 30 mars 2012, 5 avril 2012, 7 avril 2012">25 mars 2012, 30 mars 2012, 5 avril 2012, 7 avril 2012</option>
           <option value="25 mars 2012, 30 mars 2012, 5 avril 2012, 7 avril 2012">25 mars 2012, 30 mars 2012, 5 avril 2012, 7 avril 2012</option>
         </select>
-        <select name="message_request[date3]">
+        <select name="message_request[date2]" id="flow_date">
+          <option value="26 mars 2012, 30 mars 2012, 5 avril 2012, 7 avril 2012">2, 2012, 30 mars 2012, 5 avril 2012, 7 avril 2012</option>
           <option value="25 mars 2012, 30 mars 2012, 5 avril 2012, 7 avril 2012">25 mars 2012, 30 mars 2012, 5 avril 2012, 7 avril 2012</option>
+          <option value="25 mars 2012, 30 mars 2012, 5 avril 2012, 7 avril 2012">25 mars 2012, 30 mars 2012, 5 avril 2012, 7 avril 2012</option>
+        </select>
+        <select name="message_request[date3]" id="both_date">
+          <option value="27 mars 2012, 30 mars 2012, 5 avril 2012, 7 avril 2012">3, 2012, 30 mars 2012, 5 avril 2012, 7 avril 2012</option>
           <option value="25 mars 2012, 30 mars 2012, 5 avril 2012, 7 avril 2012">25 mars 2012, 30 mars 2012, 5 avril 2012, 7 avril 2012</option>
           <option value="25 mars 2012, 30 mars 2012, 5 avril 2012, 7 avril 2012">25 mars 2012, 30 mars 2012, 5 avril 2012, 7 avril 2012</option>
         </select>
