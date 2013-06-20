@@ -1,6 +1,6 @@
 # encoding: utf-8
 set :application, 'website'
-set :domain,      'yvettetheraulaz.ch'
+set :domain,      'dieterlgs.ch'
 set :server_name, 'ruby-rack-2.liquid-concept.ch'
 
 set :scm,         :git
