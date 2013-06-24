@@ -17,6 +17,10 @@ compile %r{/assets/.+/} do
   # don’t filter other assets items
 end
 
+compile '/robots/' do
+
+end
+
 compile '*' do
   if item.binary?
     # don’t filter binary items
@@ -42,6 +46,10 @@ end
 
 route '/htaccess/' do
   '/.htaccess'
+end
+
+route '/robots/' do
+  '/robots.txt'
 end
 
 route '*' do
