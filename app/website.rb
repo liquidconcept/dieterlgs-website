@@ -1,8 +1,21 @@
 # encoding: utf-8
-require 'sinatra/base'
 require 'pony'
+require 'sinatra'
+require 'sinatra/base'
+require 'sinatra/activerecord'
+require './app/models/date'
 
 require File.expand_path('../../config/application', __FILE__)
+require File.expand_path('../../config/nanoc', __FILE__)
+require File.expand_path('../../config/compass', __FILE__)
+
+include Nanoc::Helpers::Sprockets
+
+configure do
+  @@config = YAML.load_file('./config/settings.yaml') rescue {}
+end
+
+set :database, "sqlite3:///db/database.sqlite3"
 
 module Application
   class Website < Sinatra::Base
@@ -34,7 +47,19 @@ module Application
         :subject  => COMMAND_SUBJECT,
         :body     => template.result(binding)
       )
+      redirect "/"
     end
-    redirect "/"
+  end
+
+  class Admin < Sinatra::Base
+    use Rack::MethodOverride
+
+    use Rack::Auth::Basic, "Protected Area" do |username, password|
+      username == @@config['basic_auth']['username'] && password == @@config['basic_auth']['password']
+    end
+
+    get '/' do
+      erb :"admin/index"
+    end
   end
 end
