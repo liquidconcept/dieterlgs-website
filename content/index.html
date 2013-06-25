@@ -71,13 +71,13 @@
       <div class="bigRow">
         <h4>Choisir les dates de cours</h4>
         <select name="message_request[date1]" id="six_hours_date">
-          <%= options_for_dates(Application::Date.where(position: 0).first.date)%>
+          <%= options_for_dates(Application::Date.where(position: 0).first.date) if !Application::Date.where(position: 0).first.date.nil? %>
         </select>
         <select name="message_request[date2]" id="eight_hours_date">
-          <%= options_for_dates(Application::Date.where(position: 1).first.date)%>
+          <%= options_for_dates(Application::Date.where(position: 1).first.date) if !Application::Date.where(position: 1).first.date.nil? %>
         </select>
         <select name="message_request[date3]" id="twelve_hours_date">
-          <%= options_for_dates(Application::Date.where(position: 2).first.date)%>
+          <%= options_for_dates(Application::Date.where(position: 2).first.date) if !Application::Date.where(position: 2).first.date.nil? %>
         </select>
       </div>
       <div class="both"></div>
@@ -148,13 +148,13 @@
       <div class="bigRow">
         <h4>Choisir les dates de cours</h4>
         <select name="message_request[date1]" id="tech_date">
-          <%= options_for_dates(Application::Date.where(position: 3).first.date)%>
+          <%= options_for_dates(Application::Date.where(position: 3).first.date) if !Application::Date.where(position: 3).first.date.nil? %>
         </select>
         <select name="message_request[date2]" id="flow_date">
-          <%= options_for_dates(Application::Date.where(position: 4).first.date)%>
+          <%= options_for_dates(Application::Date.where(position: 4).first.date) if !Application::Date.where(position: 4).first.date.nil? %>
         </select>
         <select name="message_request[date3]" id="both_date">
-          <%= options_for_dates(Application::Date.where(position: 5).first.date)%>
+          <%= options_for_dates(Application::Date.where(position: 5).first.date) if !Application::Date.where(position: 5).first.date.nil? %>
         </select>
       </div>
       <div class="both"></div>
