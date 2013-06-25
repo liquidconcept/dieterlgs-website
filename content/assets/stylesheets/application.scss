@@ -5,6 +5,7 @@
 @import "compass/reset";
 @import "compass/typography/text/replacement";  /*FEATURES FOR THE LOGO*/
 @import "bootstrap";
+@import "compass/typography/text/nowrap";
 
 /**********************/
 /******* COLOR ********/
@@ -287,6 +288,8 @@ footer {
     height: 155px;
     min-height: 155px;
     max-height: 155px;
+
+    @include nowrap;
   }
 }
 
