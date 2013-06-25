@@ -4,6 +4,7 @@
 
 @import "compass/reset";
 @import "compass/typography/text/replacement";  /*FEATURES FOR THE LOGO*/
+@import "bootstrap";
 
 /**********************/
 /******* COLOR ********/
@@ -14,6 +15,7 @@ $greyBG: #c9c6bf;
 $blue: #0000f7;
 $red: #f70000;
 $yellow: #f7f700;
+$white: #ffffff;
 
 /**********************/
 /******* OTHER ********/
@@ -260,3 +262,43 @@ footer {
     }
   }
 }
+
+/**********************/
+/******* GENERAL ******/
+/**********************/
+
+.form {
+  border: white 2px dashed;
+  margin: 40px;
+  padding: 20px;
+  text-align: left;
+}
+
+.dateText {
+  margin-bottom: 20px;
+
+  textarea {
+    margin-left: 10px;
+
+    width: 836px;
+    min-width: 836px;
+    max-height: 836px;
+
+    height: 155px;
+    min-height: 155px;
+    max-height: 155px;
+  }
+}
+
+.publish {
+  top: 60px;
+  left: 790px;
+  text-decoration: none;
+  cursor: pointer;
+  width: 150px;
+  height: 42px;
+  padding: 10px 10px;
+  color: $white;
+  font-size: 1.8em;
+}
+

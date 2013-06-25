@@ -2,8 +2,12 @@
 source 'http://rubygems.org'
 
 gem 'rack'
+gem 'rake'
 gem 'sinatra'
 gem 'pony'
+gem 'sqlite3'
+gem 'activerecord'
+gem 'sinatra-activerecord'
 
 group :nanoc do
   gem 'nanoc'
@@ -22,6 +26,7 @@ end
 group :development do
   gem 'capistrano'
   gem 'railsless-deploy'
+  gem 'tux'
 end
 
 group :development, :test do
