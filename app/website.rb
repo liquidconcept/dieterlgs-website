@@ -70,6 +70,9 @@ module Application
         date.update_attribute(:date, date_text)
       end
 
+      system 'rm public/index.html'
+      system 'bundle exec nanoc compile'
+
       redirect '/admin'
     end
   end
