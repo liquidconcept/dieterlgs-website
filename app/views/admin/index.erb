@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <title>DieterLGS - Administration</title>
+    <link rel="stylesheet" href="<%= stylesheet_path 'application' %>" media="screen">
+    <script src="<%= javascript_path 'application' %>"></script>
+  </head>
+  <body>
+    <div id="main">
+      <header>
+        <h2>079 / 310 07 00</h2>
+        <h1 class="logo">Dieter LGS  Auto moto école 1326 JURIENS</h1>
+        <a href="mailto:didischmid@bluewin">didischmid@bluewin.ch</a>
+        <div class="both"></div>
+      </header>
+      <div id="content">
+        <div id="coursObligatoires">
+          <div class="triangle">
+            <svg version="1.2" width="100%" height="100%">
+              <polygon points="0,100 50,0, 100,100" fill="#ffffff" transform="scale(0.54,0.3) rotate(180,50,50)"></polygon>
+             </svg>
+          </div>
+          <h3>Plage Horaires<div class="cubeY"></div></h3>
+          <p>Chaque ligne représentera une ligne dans le choix de la date correspondante</p>
+          <div class="form">
+            <form action="/admin/publish" method="post">
+              <div style="margin:0;padding:0">
+                <input name="_method" type="hidden" value="put" />
+              </div>
+
+              <% @dates.each do |date| %>
+                <div class="dateText" >
+                  <h4><%= date.to_s %></h4>
+                  <textarea name="dates[<%= date.id %>]"><%= date.date %></textarea>
+                </div>
+              <% end %>
+
+              <input type="submit" value="Publier" class="btn btn-warning publish" />
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

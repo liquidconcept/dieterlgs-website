@@ -7,3 +7,5 @@ Guardfile
 crash.log
 /tmp
 /log
+/config/settings.yml
+/db/database.sqlite3

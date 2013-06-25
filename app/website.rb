@@ -12,7 +12,7 @@ require File.expand_path('../../config/compass', __FILE__)
 include Nanoc::Helpers::Sprockets
 
 configure do
-  @@config = YAML.load_file('./config/settings.yaml') rescue {}
+  @@config = YAML.load_file(File.expand_path('../../config/settings.yml', __FILE__)) rescue {}
 end
 
 set :database, "sqlite3:///db/database.sqlite3"
@@ -59,7 +59,18 @@ module Application
     end
 
     get '/' do
+      @dates = Date.order('position ASC')
+
       erb :"admin/index"
+    end
+
+    put '/publish' do
+      params[:dates].each do |key, date_text|
+        date = Date.find(key.to_i)
+        date.update_attribute(:date, date_text)
+      end
+
+      redirect '/admin'
     end
   end
 end

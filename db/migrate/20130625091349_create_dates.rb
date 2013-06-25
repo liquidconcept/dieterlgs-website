@@ -2,7 +2,7 @@ class CreateDates < ActiveRecord::Migration
   def up
      create_table :dates do |t|
       t.string :date
-      t.integer :order
+      t.integer :position
       t.timestamps
     end
 
@@ -10,12 +10,12 @@ class CreateDates < ActiveRecord::Migration
 
     while Application::Date.count < 6
       Application::Date.create do |date|
-        date.order = Application::Date.count
+        date.position = Application::Date.count
       end
     end
   end
 
   def down
-    drop_table :news
+    drop_table :dates
   end
 end
