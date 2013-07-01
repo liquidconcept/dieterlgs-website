@@ -27,11 +27,24 @@ module Application
       template = ERB.new(File.read(File.expand_path('../templates/contact.text.erb', __FILE__), :encoding => 'UTF-8'))
 
       Pony.mail(
-        :from     => params[:message_request][:mail],
-        :to       => COMMAND_EMAIL_TO,
+        :to => @@config['mailer']['mail_to'],
+        :via => :smtp,
+        :via_options => {
+          :address              => 'smtp.gmail.com',
+          :port                 => '587',
+          :enable_starttls_auto => true,
+          :user_name            => 'info@liquid-concept.ch',
+          :password             => @@config['mailer']['password'],
+          :authentication       => :plain,
+          :domain               => "localhost.localdomain"
+        },
         :charset  => 'utf-8',
-        :subject  => COMMAND_SUBJECT,
-        :body     => template.result(binding)
+        :subject  => @@config['mailer']['subject'],
+        :body     => template.result(binding),
+        :headers  => {
+          'Reply-To' => params[:message_request][:mail],
+          'From' => '"Liquid Concept Mailler" <no-reply@liquid-concept.ch>'
+        }
       )
       redirect "/"
     end
@@ -41,11 +54,24 @@ module Application
       template = ERB.new(File.read(File.expand_path('../templates/contact2.text.erb', __FILE__), :encoding => 'UTF-8'))
 
       Pony.mail(
-        :from     => params[:message_request][:mail],
-        :to       => COMMAND_EMAIL_TO,
+        :to => @@config['mailer']['mail_to'],
+        :via => :smtp,
+        :via_options => {
+          :address              => 'smtp.gmail.com',
+          :port                 => '587',
+          :enable_starttls_auto => true,
+          :user_name            => 'info@liquid-concept.ch',
+          :password             => @@config['mailer']['password'],
+          :authentication       => :plain,
+          :domain               => "localhost.localdomain"
+        },
         :charset  => 'utf-8',
-        :subject  => COMMAND_SUBJECT,
-        :body     => template.result(binding)
+        :subject  => @@config['mailer']['subject'],
+        :body     => template.result(binding),
+        :headers  => {
+          'Reply-To' => params[:message_request][:mail],
+          'From' => 'no-reply@liquid-concept.ch'
+        }
       )
       redirect "/"
     end
