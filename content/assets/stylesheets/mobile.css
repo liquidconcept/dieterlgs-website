@@ -1,0 +1,100 @@
+@import "compass/typography/text/replacement";
+@import "compass/utilities/general/clearfix";
+
+/*----------------------------------------*/
+/*               RESPONSIVE               */
+/*----------------------------------------*/
+
+@media handeld and (max-width:600px), screen and (max-device-width: 600px), screen and (max-width: 600px) {
+
+  #main {
+    max-width: 320px;
+    min-width: 320px;
+    width: 320px;
+
+    select {
+      width: 200px;
+    }
+
+    header h2 {
+      margin: 5px 74px 0 64px;
+      font-size: 23px;
+    }
+
+    .span2, .span4, .span5 {
+      padding-left: 20px;
+    }
+
+    .span2 {
+      max-width: 88px;
+    }
+
+    .number {
+      margin-left: 64px;
+    }
+
+    p, span {
+      font-size: 12px;
+    }
+
+    p {
+      margin-top: 4px;
+    }
+
+    .checkbox {
+      max-width: 200px;
+    }
+
+    .checkbox > input {
+      max-width: 20px;
+    }
+
+    h3 {
+      font-size: 16px;
+      font-weight: bold;
+      max-width: 300px;
+      text-align: center;
+    }
+
+    h4 {
+      font-size: 16px;
+      margin-top: 10px;
+    }
+
+    h6 {
+      max-width: 210px;
+    }
+
+    .cubeR, .cubeY, .cubeY2, .cubeB {
+      display: none;
+    }
+
+    header {
+
+      a {
+        margin: 13px 0 0 1px;
+      }
+    }
+
+    header h1.logo {
+      width: 322px;
+    }
+
+    br {
+        display: none;
+    }
+
+    footer h2 {
+      font-size: 16px;
+    }
+
+    .row input {
+      width: 75px;
+    }
+
+    .confirmation input {
+      width: 200px;
+      max-width: 200px;
+    }
+  }
+}

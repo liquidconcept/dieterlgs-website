@@ -7,6 +7,8 @@
 @import "bootstrap";
 @import "compass/typography/text/nowrap";
 
+@import "bootstrap";
+
 /**********************/
 /******* COLOR ********/
 /**********************/
@@ -210,8 +212,6 @@ footer {
 }
 
 .row {
-  width: 180px;
-  float: left;
   text-align: left;
 
   input {
@@ -225,24 +225,6 @@ footer {
   input {
     display: inline;
     margin-right: 10px;
-  }
-}
-
-.middleRow {
-  width: 340px;
-  float: left;
-  text-align: left;
-
-  input {
-    display: block;
-  }
-
-  .checkbox {
-    display: block;
-
-    input {
-      display: inline;
-    }
   }
 }
 
@@ -304,4 +286,6 @@ footer {
   color: $white;
   font-size: 1.8em;
 }
+
+@import "mobile";
 
