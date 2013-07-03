@@ -4,7 +4,7 @@ require File.expand_path('../config/nanoc', __FILE__)
 
 ############ Compile ############
 
-compile %r{/assets/(stylesheets|javascripts)/.+/} do
+compile %r{/assets/(stylesheets|javascripts)/[^_].+/} do
   filter :sprockets, {
     :css_compressor => Nanoc.production? ? :scss : nil,
     :js_compressor => Nanoc.production? ? :uglifier : nil
@@ -32,12 +32,15 @@ end
 
 ############ Route ############
 
-route %r{/assets/(stylesheets|javascripts)/.+/}, :snapshot => :uncompressed do
+route %r{/assets/(stylesheets|javascripts)/[^_].+/}, :snapshot => :uncompressed do
   Nanoc::Helpers::Sprockets.asset_path(item)
 end
 
-route %r{/assets/(stylesheets|javascripts)/.+/} do
+route %r{/assets/(stylesheets|javascripts)/[^_].+/} do
   Nanoc::Helpers::Sprockets.asset_path(item) + '.gz'
+end
+
+route %r{/assets/(stylesheets|javascripts)/_.+/} do
 end
 
 route %r{/assets/.+/} do
