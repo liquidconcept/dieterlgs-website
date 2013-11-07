@@ -143,6 +143,8 @@ header {
   h1.logo {
     float: left;
     @include replace-text-with-dimensions('logo_dieter.jpg', 50%, 50%, true);
+    background-size: contain;
+    width: 300px;
   }
 
   div.both {
@@ -151,12 +153,65 @@ header {
 }
 
 footer {
+  margin-top: 40px;
+
+  div.both {
+    clear: both;
+  }
 
   h2 {
     color: $grey;
     margin-top: 20px;
     margin-bottom: 20px;
     font-size: 25px;
+  }
+
+  .logo_cplt, .logo_photos, .logo_long, .logo_moto_mode, .logo_risoto, .logo_san {
+    float: left;
+    margin-left: 50px;
+  }
+
+  .logo_cplt {
+    @include replace-text-with-dimensions('cplt.jpg', 50%, 50%, true);
+    background-size: contain;
+    height: 80px;
+    width: 50px;
+    margin-left: 130px;
+  }
+
+  .logo_photos {
+    @include replace-text-with-dimensions('logo_photos.jpg', 50%, 50%, true);
+    background-size: contain;
+    height: 80px;
+    width: 50px;
+  }
+
+  .logo_long {
+    @include replace-text-with-dimensions('long.jpg', 50%, 50%, true);
+    background-size: contain;
+    height: 80px;
+    width: 120px;
+  }
+
+  .logo_moto_mode {
+    @include replace-text-with-dimensions('Moto-Mode.jpg', 50%, 50%, true);
+    background-size: contain;
+    height: 80px;
+    width: 80px;
+  }
+
+  .logo_risoto {
+    @include replace-text-with-dimensions('risoto.jpg', 50%, 50%, true);
+    background-size: contain;
+    height: 80px;
+    width: 80px;
+  }
+
+  .logo_san {
+    @include replace-text-with-dimensions('san.jpg', 50%, 50%, true);
+    background-size: contain;
+    height: 80px;
+    width: 80px;
   }
 }
 
