@@ -194,7 +194,7 @@ footer {
   }
 
   .logo_moto_mode {
-    @include replace-text-with-dimensions('Moto-Mode.jpg', 50%, 50%, true);
+    @include replace-text-with-dimensions('moto-mode.jpg', 50%, 50%, true);
     background-size: contain;
     height: 80px;
     width: 80px;
