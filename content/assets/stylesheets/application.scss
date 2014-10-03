@@ -9,6 +9,7 @@
 @import "compass/utilities/general/clearfix";
 
 @import "bootstrap";
+@import "redactor";
 
 /**********************/
 /******* COLOR ********/
@@ -52,7 +53,7 @@ h4 {
 .triangle {
   width: 54px;
   height: 30px;
-  margin-left: 440px;
+  margin-left: 464px;
 }
 
 .both {
@@ -68,17 +69,17 @@ h4 {
 
 .cubeB {
   background-color: $blue;
-  margin-left: 195px;
+  margin-left: 209px;
 }
 
 .cubeR {
   background-color: $red;
-  margin-left: 152px;
+  margin-left: 172px;
 }
 
 .cubeY {
   background-color: $yellow;
-  margin-left: 310px;
+  margin-left: 340px;
 }
 
 .cubeY2 {

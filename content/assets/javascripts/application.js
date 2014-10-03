@@ -2,6 +2,7 @@
 // =require jquery
 // =require jquery-ui
 // =require jquery-h5validate
+// =require redactor
 
 $(function() {
   // validation form init
