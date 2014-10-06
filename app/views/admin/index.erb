@@ -17,10 +17,12 @@
           <div style="margin:0;padding:0">
             <input name="_method" type="hidden" value="put" />
           </div>
+
           <% @texts.each do |text| %>
             <textarea id="text" name="texts[<%= text.id %>]"><%= text.text %></textarea>
-            <p><input type="submit" value="Publier" class="btn btn-warning publish" name="send"/></p>
           <% end %>
+
+          <input type="submit" value="Publier" class="btn btn-warning publish" name="send"/>
         </form>
         <div id="coursObligatoires">
           <div class="triangle">
