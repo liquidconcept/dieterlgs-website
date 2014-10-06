@@ -4,6 +4,7 @@ require 'sinatra'
 require 'sinatra/base'
 require 'sinatra/activerecord'
 require './app/models/date'
+require './app/models/text'
 
 require File.expand_path('../../config/application', __FILE__)
 require File.expand_path('../../config/nanoc', __FILE__)
@@ -86,20 +87,31 @@ module Application
 
     get '/' do
       @dates = Date.order('position ASC')
+      @texts = Text.order('position ASC')
 
       erb :"admin/index"
     end
 
-    put '/publish' do
+    put '/publish_date' do
       params[:dates].each do |key, date_text|
         date = Date.find(key.to_i)
         date.update_attribute(:date, date_text)
       end
 
-      system 'rm public/index.html'
-      system 'bundle exec nanoc compile'
+      system 'rm public/index.html && bundle exec nanoc compile'
 
-      redirect '/admin'
+      erb :"admin/index"
+    end
+
+     put '/publish_text' do
+      params[:texts].each do |key, value|
+        text = Text.find(key.to_i)
+        text.update_attribute(:text, value)
+      end
+
+      system 'rm public/index.html && bundle exec nanoc compile'
+
+      erb :"admin/index"
     end
   end
 end

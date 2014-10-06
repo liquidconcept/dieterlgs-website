@@ -13,6 +13,15 @@
         <div class="both"></div>
       </header>
       <div id="content">
+        <form action="/admin/publish_text" method="post">
+          <div style="margin:0;padding:0">
+            <input name="_method" type="hidden" value="put" />
+          </div>
+          <% @texts.each do |text| %>
+            <textarea id="text" name="texts[<%= text.id %>]"><%= text.text %></textarea>
+            <p><input type="submit" value="Publier" class="btn btn-warning publish" name="send"/></p>
+          <% end %>
+        </form>
         <div id="coursObligatoires">
           <div class="triangle">
             <svg version="1.2" width="100%" height="100%">
@@ -22,7 +31,7 @@
           <h3>Plage Horaires<div class="cubeY"></div></h3>
           <p>Chaque ligne représentera une ligne dans le choix de la date correspondante</p>
           <div class="form">
-            <form action="/admin/publish" method="post">
+            <form action="/admin/publish_date" method="post">
               <div style="margin:0;padding:0">
                 <input name="_method" type="hidden" value="put" />
               </div>
