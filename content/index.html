@@ -1,6 +1,17 @@
-<div>
-</div>
+<% if Application::Text.first.text != '<p><br></p>' %>
+  <div id="promo">
+    <h3>Promotion<div class="cubeG"></div></h3>
+    <%= Application::Text.first.text %>
+  </div>
+<% end %>
 <div id="conduiteVoiture">
+  <% if Application::Text.first.text != '<p><br></p>' %>
+    <div class="triangle">
+      <svg version="1.2" width="100%" height="100%">
+        <polygon points="0,100 50,0, 100,100" fill="#ffffff" transform="scale(0.54,0.3) rotate(180,50,50)"></polygon>
+      </svg>
+    </div>
+  <% end %>
   <h3>Enseignement de la conduite voiture<div class="cubeB"></div></h3>
   <h4>Du mardi au vendredi, du matin au soir</h4>
   <p>inscription et assurance CHF 90.-</p>

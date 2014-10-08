@@ -98,20 +98,22 @@ module Application
         date.update_attribute(:date, date_text)
       end
 
-      system 'rm public/index.html && bundle exec nanoc compile'
+      system 'rm public/index.html'
+      system 'bundle exec nanoc compile'
 
-      erb :"admin/index"
+      redirect '/admin'
     end
 
-     put '/publish_text' do
+    put '/publish_text' do
       params[:texts].each do |key, value|
         text = Text.find(key.to_i)
         text.update_attribute(:text, value)
       end
 
-      system 'rm public/index.html && bundle exec nanoc compile'
+      system 'rm public/index.html'
+      system 'bundle exec nanoc compile'
 
-      erb :"admin/index"
+      redirect '/admin' #do not change to erb:"/admin" or erb:"/admin/index" : it seems to cause bugs
     end
   end
 end

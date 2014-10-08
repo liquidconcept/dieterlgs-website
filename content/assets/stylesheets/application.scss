@@ -21,6 +21,7 @@ $blue: #0000f7;
 $red: #f70000;
 $yellow: #f7f700;
 $white: #ffffff;
+$green: #45B845;
 
 /**********************/
 /******* OTHER ********/
@@ -60,11 +61,16 @@ h4 {
   clear: both;
 }
 
-.cubeB, .cubeY, .cubeR, .cubeY2 {
+.cubeB, .cubeY, .cubeR, .cubeY2, .cubeG {
   width: 45px;
   height: 25px;
   float: left;
   margin-right: 10px;
+}
+
+.cubeG {
+  background-color: $green;
+  margin-left: 393px;
 }
 
 .cubeB {
