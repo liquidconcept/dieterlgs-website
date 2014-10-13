@@ -97,6 +97,11 @@ h4 {
   margin: 10px 0;
 }
 
+.redactor-box {
+  margin: 32px 0 32px 32px;
+  width: 848px;
+}
+
 p {
   line-height: 130%;
   font-size: 18px;
@@ -222,6 +227,13 @@ footer {
   }
 }
 
+#admin {
+
+  #content {
+    background-color: $greyBG;
+  }
+}
+
 #conduiteVoiture {
   background-color: $greyBG;
   margin: 20px 0;
@@ -235,6 +247,19 @@ footer {
 #coursObligatoires {
   margin-top: 20px;
   padding-bottom: 20px;
+}
+
+#promoForm {
+
+  form {
+    border: white 2px dashed;
+    margin: 0 32px 32px 32px;
+    text-align: left;
+  }
+
+  input {
+    margin: 0 0 32px 32px!important;
+  }
 }
 
 #preparation {
