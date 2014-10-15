@@ -5,6 +5,7 @@ require 'sinatra/base'
 require 'sinatra/activerecord'
 require './app/models/date'
 require './app/models/text'
+require './app/models/price'
 
 require File.expand_path('../../config/application', __FILE__)
 require File.expand_path('../../config/nanoc', __FILE__)
@@ -88,6 +89,7 @@ module Application
     get '/' do
       @dates = Date.order('position ASC')
       @texts = Text.order('position ASC')
+      @prices = Price.order('position ASC')
 
       erb :"admin/index"
     end
@@ -108,6 +110,34 @@ module Application
       params[:texts].each do |key, value|
         text = Text.find(key.to_i)
         text.update_attribute(:text, value)
+      end
+
+      system 'rm public/index.html'
+      system 'bundle exec nanoc compile'
+
+      redirect '/admin' #do not change to erb:"/admin" or erb:"/admin/index" : it seems to cause bugs
+    end
+
+    put '/publish_price' do
+      params[:prices][:amount_default].each do |key, value|
+        price = Price.find(key.to_i)
+        price.update_attribute(:amount_default, value)
+      end
+
+      params[:prices][:amount_promo].each do |key, value|
+        price = Price.find(key.to_i)
+        price.update_attribute(:amount_promo, value)
+      end
+
+      params[:prices][:promo_active].each do |key, value|
+        price = Price.find(key.to_i)
+        price.update_attribute(:promo_active, value)
+
+        if price.promo_active
+          price.update_attribute(:amount, price.amount_promo)
+        else
+          price.update_attribute(:amount, price.amount_default)
+        end
       end
 
       system 'rm public/index.html'

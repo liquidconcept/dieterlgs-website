@@ -14,6 +14,33 @@
       </header>
       <div id="admin">
         <div id="content">
+          <div id="priceForm">
+            <h3>Tarifs<div class="cubeR"></div></h3>
+            <form action="/admin/publish_price" method="post">
+              <div style="margin:0;padding:0">
+                <input name="_method" type="hidden" value="put" />
+              </div>
+
+              <% @prices.each do |price| %>
+                <h4><%= price.to_s %></h4>
+                <div class="price"><label for="default_price">prix de base</label><textarea id="default_price" name="prices[amount_default][<%= price.id %>]"><%= price.amount_default %></textarea></div>
+                <div class="price"><label for="promo_price">prix de promotion</label><textarea id="promo_price" name="prices[amount_promo][<%= price.id %>]"><%= price.amount_promo %></textarea></div>
+
+                <label for="price">promotion active</label>
+
+                <% if price.promo_active %>
+                  <input name="prices[promo_active][<%= price.id %>]" type="hidden" value="false" />
+                  <input id="price" name="prices[promo_active][<%= price.id %>]" type="checkbox" value="true" checked />
+                <% else %>
+                  <input name="prices[promo_active][<%= price.id %>]" type="hidden" value="false" />
+                  <input id="price" name="prices[promo_active][<%= price.id %>]" type="checkbox" value="true" />
+                <% end %>
+              <% end %>
+
+              <br />
+              <input type="submit" value="Publier" class="btn btn-warning publish" name="send"/>
+            </form>
+          </div>
           <div id="promoForm">
             <h3>Promotion<div class="cubeG"></div></h3>
             <form action="/admin/publish_text" method="post">
