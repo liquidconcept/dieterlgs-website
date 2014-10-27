@@ -90,11 +90,16 @@ module Application
       @dates = Date.order('position ASC')
       @texts = Text.order('position ASC')
       @prices = Price.order('position ASC')
+      @message = String.new
 
-      erb :"admin/index"
+      erb :"admin/index", locals: { message: @message, prices: @prices, texts: @texts, dates: @dates }
     end
 
     put '/publish_date' do
+      @dates = Date.order('position ASC')
+      @texts = Text.order('position ASC')
+      @prices = Price.order('position ASC')
+
       params[:dates].each do |key, date_text|
         date = Date.find(key.to_i)
         date.update_attribute(:date, date_text)
@@ -103,10 +108,16 @@ module Application
       system 'rm public/index.html'
       system 'bundle exec nanoc compile'
 
-      redirect '/admin'
+      @message = 'Les dates ont été publiées'
+
+      erb :"admin/index", locals: { message: @message, prices: @prices, texts: @texts, dates: @dates }
     end
 
     put '/publish_text' do
+      @dates = Date.order('position ASC')
+      @texts = Text.order('position ASC')
+      @prices = Price.order('position ASC')
+
       params[:texts].each do |key, value|
         text = Text.find(key.to_i)
         text.update_attribute(:text, value)
@@ -115,10 +126,16 @@ module Application
       system 'rm public/index.html'
       system 'bundle exec nanoc compile'
 
-      redirect '/admin' #do not change to erb:"/admin" or erb:"/admin/index" : it seems to cause bugs
+      @message = 'La promotion a été publiées'
+
+      erb :"admin/index", locals: { message: @message, prices: @prices, texts: @texts, dates: @dates }
     end
 
     put '/publish_price' do
+      @dates = Date.order('position ASC')
+      @texts = Text.order('position ASC')
+      @prices = Price.order('position ASC')
+
       params[:prices][:amount_default].each do |key, value|
         price = Price.find(key.to_i)
         price.update_attribute(:amount_default, value)
@@ -143,7 +160,9 @@ module Application
       system 'rm public/index.html'
       system 'bundle exec nanoc compile'
 
-      redirect '/admin' #do not change to erb:"/admin" or erb:"/admin/index" : it seems to cause bugs
+      @message = 'Les tarifs ont été publiés'
+
+      erb :"admin/index", locals: { message: @message, prices: @prices, texts: @texts, dates: @dates }
     end
   end
 end

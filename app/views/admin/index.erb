@@ -13,6 +13,11 @@
         <div class="both"></div>
       </header>
       <div id="admin">
+        <% if message.nil? == false %>
+          <div id="message">
+            <p><%= message %></p>
+          </div>
+        <% end %>
         <div id="content">
           <div id="priceForm">
             <h3>Tarifs<div class="cubeR"></div></h3>
@@ -21,19 +26,21 @@
                 <input name="_method" type="hidden" value="put" />
               </div>
 
-              <% @prices.each do |price| %>
-                <h4><%= price.to_s %></h4>
-                <div class="price"><label for="default_price">prix de base</label><textarea id="default_price" name="prices[amount_default][<%= price.id %>]"><%= price.amount_default %></textarea></div>
-                <div class="price"><label for="promo_price">prix de promotion</label><textarea id="promo_price" name="prices[amount_promo][<%= price.id %>]"><%= price.amount_promo %></textarea></div>
+              <% if prices.nil? == false %>
+                <% prices.each do |price| %>
+                  <h4><%= price.to_s %></h4>
+                  <div class="price"><label for="default_price">prix de base</label><input id="default_price" name="prices[amount_default][<%= price.id %>]" value="<%= price.amount_default %>"></input></div>
+                  <div class="price"><label for="promo_price">prix de promotion</label><input id="promo_price" name="prices[amount_promo][<%= price.id %>]" value="<%= price.amount_promo %>"></input></div>
 
-                <label for="price">promotion active</label>
+                  <label for="price">promotion active</label>
 
-                <% if price.promo_active %>
-                  <input name="prices[promo_active][<%= price.id %>]" type="hidden" value="false" />
-                  <input id="price" name="prices[promo_active][<%= price.id %>]" type="checkbox" value="true" checked />
-                <% else %>
-                  <input name="prices[promo_active][<%= price.id %>]" type="hidden" value="false" />
-                  <input id="price" name="prices[promo_active][<%= price.id %>]" type="checkbox" value="true" />
+                  <% if price.promo_active %>
+                    <input name="prices[promo_active][<%= price.id %>]" type="hidden" value="false" />
+                    <input id="price" name="prices[promo_active][<%= price.id %>]" type="checkbox" value="true" checked />
+                  <% else %>
+                    <input name="prices[promo_active][<%= price.id %>]" type="hidden" value="false" />
+                    <input id="price" name="prices[promo_active][<%= price.id %>]" type="checkbox" value="true" />
+                  <% end %>
                 <% end %>
               <% end %>
 
@@ -48,8 +55,10 @@
                 <input name="_method" type="hidden" value="put" />
               </div>
 
-              <% @texts.each do |text| %>
-                <textarea id="text" name="texts[<%= text.id %>]"><%= text.text %></textarea>
+              <% if texts.nil? == false %>
+                <% texts.each do |text| %>
+                  <textarea id="text" name="texts[<%= text.id %>]"><%= text.text %></textarea>
+                <% end %>
               <% end %>
 
               <input type="submit" value="Publier" class="btn btn-warning publish" name="send"/>
@@ -64,11 +73,13 @@
                   <input name="_method" type="hidden" value="put" />
                 </div>
 
-                <% @dates.each do |date| %>
-                  <div class="dateText" >
-                    <h4><%= date.to_s %></h4>
-                    <textarea name="dates[<%= date.id %>]"><%= date.date %></textarea>
-                  </div>
+                <% if dates.nil? == false %>
+                  <% dates.each do |date| %>
+                    <div class="dateText" >
+                      <h4><%= date.to_s %></h4>
+                      <textarea name="dates[<%= date.id %>]"><%= date.date %></textarea>
+                    </div>
+                  <% end %>
                 <% end %>
 
                 <input type="submit" value="Publier" class="btn btn-warning publish" />

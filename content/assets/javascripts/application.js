@@ -13,7 +13,11 @@ $(function() {
   $('#tech_date').hide();
   $('#flow_date').hide();
   $('#both_date').hide();
-  $('#text').redactor();
+
+  /* redactor */
+  $('#text').redactor({
+    minHeight: 200 // pixels
+  });
 
   // pickup the right date for the package
   $('#pack_checkbox > .checkbox > input').on('click', function() {
