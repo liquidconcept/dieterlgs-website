@@ -9,6 +9,7 @@
 @import "compass/utilities/general/clearfix";
 
 @import "bootstrap";
+@import "redactor";
 
 /**********************/
 /******* COLOR ********/
@@ -20,6 +21,7 @@ $blue: #0000f7;
 $red: #f70000;
 $yellow: #f7f700;
 $white: #ffffff;
+$green: #45B845;
 
 /**********************/
 /******* OTHER ********/
@@ -52,33 +54,38 @@ h4 {
 .triangle {
   width: 54px;
   height: 30px;
-  margin-left: 440px;
+  margin-left: 464px;
 }
 
 .both {
   clear: both;
 }
 
-.cubeB, .cubeY, .cubeR, .cubeY2 {
+.cubeB, .cubeY, .cubeR, .cubeY2, .cubeG {
   width: 45px;
   height: 25px;
   float: left;
   margin-right: 10px;
 }
 
+.cubeG {
+  background-color: $green;
+  margin-left: 393px;
+}
+
 .cubeB {
   background-color: $blue;
-  margin-left: 195px;
+  margin-left: 209px;
 }
 
 .cubeR {
   background-color: $red;
-  margin-left: 152px;
+  margin-left: 172px;
 }
 
 .cubeY {
   background-color: $yellow;
-  margin-left: 310px;
+  margin-left: 340px;
 }
 
 .cubeY2 {
@@ -215,6 +222,26 @@ footer {
   }
 }
 
+#admin {
+  div#message {
+    /* Alerts success code from twitter boostrap */
+    color: #3c763d;
+    background-color: #dff0d8;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #d6e9c6;
+    border-radius: 4px;
+  }
+
+  #content {
+    background-color: $greyBG;
+  }
+
+  .cubeR {
+    margin-left: 437px;
+  }
+}
+
 #conduiteVoiture {
   background-color: $greyBG;
   margin: 20px 0;
@@ -228,6 +255,47 @@ footer {
 #coursObligatoires {
   margin-top: 20px;
   padding-bottom: 20px;
+}
+
+#promoForm, #priceForm {
+
+  form {
+    border: white 2px dashed;
+    margin: 0 41px 32px 41px;
+    text-align: left;
+  }
+
+  h4 {
+    margin-left: 23px;
+    margin-top: 25px;
+  }
+
+  .redactor-box {
+    width: 848px;
+  }
+
+  .redactor-box {
+    margin: 32px 0 0 32px;
+  }
+
+  .price {
+    clear: both;
+  }
+
+  label {
+    float: left;
+    width: 145px;
+    margin-left: 40px;
+  }
+
+  textarea {
+    height: 26px;
+    width: 120px;
+  }
+
+  .publish {
+    margin: 27px 0 23px 22px;
+  }
 }
 
 #preparation {
