@@ -61,7 +61,7 @@ h4 {
   clear: both;
 }
 
-.cubeB, .cubeY, .cubeR, .cubeY2, .cubeG {
+.cubeB, .cubeY, .cubeR, .cubeY2, .cubeG, .cubeG2 {
   width: 45px;
   height: 25px;
   float: left;
@@ -73,9 +73,14 @@ h4 {
   margin-left: 393px;
 }
 
+.cubeG2 {
+  background-color: $green;
+  margin-left: 210px;
+}
+
 .cubeB {
   background-color: $blue;
-  margin-left: 209px;
+  margin-left: 210px;
 }
 
 .cubeR {
@@ -244,7 +249,12 @@ footer {
 
 #conduiteVoiture {
   background-color: $greyBG;
-  margin: 20px 0;
+  margin: 20px 0 0 0;
+  padding-bottom: 20px;
+}
+
+#sauveteurs {
+  background-color: #a6a196;
   padding-bottom: 20px;
 }
 
