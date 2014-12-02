@@ -2,6 +2,7 @@
 // =require jquery
 // =require jquery-ui
 // =require jquery-h5validate
+// =require redactor
 
 $(function() {
   // validation form init
@@ -12,6 +13,11 @@ $(function() {
   $('#tech_date').hide();
   $('#flow_date').hide();
   $('#both_date').hide();
+
+  /* redactor */
+  $('#text').redactor({
+    minHeight: 200 // pixels
+  });
 
   // pickup the right date for the package
   $('#pack_checkbox > .checkbox > input').on('click', function() {
