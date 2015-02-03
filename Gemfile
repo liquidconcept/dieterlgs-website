@@ -17,8 +17,8 @@ group :nanoc do
   gem 'sass'
   gem 'compass'
   gem 'uglifier'
-  gem 'libv8', '~> 3.11.8'
-  gem 'therubyracer'
+  gem 'therubyracer', '0.12.0'
+  gem 'libv8', '3.16.14.3'
   gem 'nanoc-sprockets-filter'
   gem 'nanoc-gzip-filter'
 end
