@@ -178,7 +178,7 @@ footer {
     font-size: 25px;
   }
 
-  .logo_cplt, .logo_photos, .logo_long, .logo_moto_mode, .logo_risoto, .logo_san {
+  .logo_cplt, .logo_photos, .logo_long, .logo_moto_mode, .logo_risoto, .logo_san, .logo_alldidact {
     float: left;
     margin-left: 50px;
   }
@@ -188,7 +188,7 @@ footer {
     background-size: contain;
     height: 80px;
     width: 50px;
-    margin-left: 130px;
+    margin-left: 80px;
   }
 
   .logo_photos {
@@ -221,6 +221,13 @@ footer {
 
   .logo_san {
     @include replace-text-with-dimensions('san.jpg', 50%, 50%, true);
+    background-size: contain;
+    height: 80px;
+    width: 80px;
+  }
+
+  .logo_alldidact {
+    @include replace-text-with-dimensions('alldidact.png', 50%, 50%, true);
     background-size: contain;
     height: 80px;
     width: 80px;
@@ -422,4 +429,3 @@ footer {
 }
 
 @import "mobile";
-
