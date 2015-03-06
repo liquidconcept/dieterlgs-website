@@ -164,6 +164,25 @@ header {
   }
 }
 
+#facebook {
+    p.rejoignez-nous {
+      float: left;
+      margin: 8px 8px 0 40px;
+    }
+
+    .logo_facebook {
+      @include replace-text-with-dimensions('facebook_logo.jpg', 50%, 50%, true);
+      background-size: contain;
+      height: 35px;
+      width: 98px;
+      margin-left: 42px;
+    }
+
+    div.both {
+      clear: both;
+    }
+}
+
 footer {
   margin-top: 40px;
 
