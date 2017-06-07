@@ -30,6 +30,7 @@ module Application
 
       Pony.mail(
         :to => @@config['mailer']['mail_to'],
+        :cc => params[:message_request][:mail],
         :via => :smtp,
         :via_options => {
           :address              => 'smtp.gmail.com',
@@ -57,6 +58,7 @@ module Application
 
       Pony.mail(
         :to => @@config['mailer']['mail_to'],
+        :cc => params[:message_request][:mail],
         :via => :smtp,
         :via_options => {
           :address              => 'smtp.gmail.com',
