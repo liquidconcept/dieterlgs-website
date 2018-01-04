@@ -7,19 +7,19 @@ require 'bundler/setup'
 require 'app/website'
 
 map 'http://www.dieterlgs.ch/' do
-  use Application::Website
+  run Application::Website
 end
 
 map 'http://dieterlgs.ch/' do
-  use Application::Website
+  run Application::Website
 end
 
 map 'http://www.dieterlgs.ch/admin/' do
-  use Application::Admin
+  run Application::Admin
 end
 
 map 'http://dieterlgs.ch/admin/' do
-  use Application::Admin
+  run Application::Admin
 end
 
 # Temp
