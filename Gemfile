@@ -2,6 +2,7 @@
 source 'http://rubygems.org'
 
 gem 'rack'
+gem 'rack-cache'
 gem 'rake'
 gem 'sinatra'
 gem 'pony'
