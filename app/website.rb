@@ -33,20 +33,20 @@ module Application
         :cc => params[:message_request][:mail],
         :via => :smtp,
         :via_options => {
-          :address              => 'smtp.gmail.com',
+          :address              => @@config['mailer']['smtp'],
           :port                 => '587',
           :enable_starttls_auto => true,
-          :user_name            => 'info@liquid-concept.ch',
+          :user_name            => @@config['mailer']['username'],
           :password             => @@config['mailer']['password'],
           :authentication       => :plain,
-          :domain               => "localhost.localdomain"
+          :domain               => "dieterlgs.ch"
         },
         :charset  => 'utf-8',
-        :subject  => @@config['mailer']['subject'],
+        :subject  => 'Confirmation d\'inscription',
         :body     => template.result(binding),
         :headers  => {
           'Reply-To' => params[:message_request][:mail],
-          'From' => '"Liquid Concept Mailler" <no-reply@liquid-concept.ch>'
+          'From' => "\"Dieter LGS\" <#{@@config['mailer']['mail_to']}>"
         }
       )
       redirect "/"
@@ -61,20 +61,20 @@ module Application
         :cc => params[:message_request][:mail],
         :via => :smtp,
         :via_options => {
-          :address              => 'smtp.gmail.com',
+          :address              => @@config['mailer']['smtp'],
           :port                 => '587',
           :enable_starttls_auto => true,
-          :user_name            => 'info@liquid-concept.ch',
+          :user_name            => @@config['mailer']['username'],
           :password             => @@config['mailer']['password'],
           :authentication       => :plain,
-          :domain               => "localhost.localdomain"
+          :domain               => "dieterlgs.ch"
         },
         :charset  => 'utf-8',
-        :subject  => @@config['mailer']['subject'],
+        :subject  => 'Confirmation d\'inscription',
         :body     => template.result(binding),
         :headers  => {
           'Reply-To' => params[:message_request][:mail],
-          'From' => 'no-reply@liquid-concept.ch'
+          'From' => "\"Dieter LGS\" <#{@@config['mailer']['mail_to']}>"
         }
       )
       redirect "/"
