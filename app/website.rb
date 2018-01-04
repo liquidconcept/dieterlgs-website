@@ -24,6 +24,10 @@ module Application
     set :static, true
     set :public_folder, File.expand_path('../../public', __FILE__)
 
+    get '/' do
+      File.read(File.expand_path('../../public(index.html)', __FILE__))
+    end
+
     # Contact form
     post '/send_contact_1' do
       template = ERB.new(File.read(File.expand_path('../templates/contact.text.erb', __FILE__), :encoding => 'UTF-8'))
