@@ -1,6 +1,5 @@
 # encoding: utf-8
 require 'pony'
-require 'rack/cache'
 require 'sinatra'
 require 'sinatra/base'
 require 'sinatra/activerecord'
@@ -26,7 +25,8 @@ module Application
     set :public_folder, File.expand_path('../../public', __FILE__)
 
     get '/' do
-      cache_control :public, :must_revalidate, :max_age => 60
+      cache_control :public, :must_revalidate
+      last_modified File.mtime(File.expand_path('../../public/index.html', __FILE__))
       File.read(File.expand_path('../../public/index.html', __FILE__))
     end
 
@@ -97,12 +97,13 @@ module Application
     end
 
     get '/' do
+      cache_control :no_cache
+
       @dates = Date.order('position ASC')
       @texts = Text.order('position ASC')
       @prices = Price.order('position ASC')
       @message = String.new
 
-      cache_control :public, :must_revalidate, :max_age => 60
       erb :"admin/index", locals: { message: @message, prices: @prices, texts: @texts, dates: @dates }
     end
 
