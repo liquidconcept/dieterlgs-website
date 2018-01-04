@@ -1,5 +1,6 @@
 # encoding: utf-8
 require 'pony'
+require 'rack/cache'
 require 'sinatra'
 require 'sinatra/base'
 require 'sinatra/activerecord'
