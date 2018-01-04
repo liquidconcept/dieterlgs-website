@@ -25,7 +25,8 @@ module Application
     set :public_folder, File.expand_path('../../public', __FILE__)
 
     get '/' do
-      File.read(File.expand_path('../../public(index.html)', __FILE__))
+      cache_control :public, :must_revalidate, :max_age => 60
+      File.read(File.expand_path('../../public/index.html', __FILE__))
     end
 
     # Contact form
@@ -40,6 +41,7 @@ module Application
           :address              => @@config['mailer']['smtp'],
           :port                 => '587',
           :enable_starttls_auto => true,
+          :openssl_verify_mode  => OpenSSL::SSL::VERIFY_NONE,
           :user_name            => @@config['mailer']['username'],
           :password             => @@config['mailer']['password'],
           :authentication       => :plain,
@@ -68,6 +70,7 @@ module Application
           :address              => @@config['mailer']['smtp'],
           :port                 => '587',
           :enable_starttls_auto => true,
+          :openssl_verify_mode  => OpenSSL::SSL::VERIFY_NONE,
           :user_name            => @@config['mailer']['username'],
           :password             => @@config['mailer']['password'],
           :authentication       => :plain,
@@ -98,6 +101,7 @@ module Application
       @prices = Price.order('position ASC')
       @message = String.new
 
+      cache_control :public, :must_revalidate, :max_age => 60
       erb :"admin/index", locals: { message: @message, prices: @prices, texts: @texts, dates: @dates }
     end
 
